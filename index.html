@@ -62,7 +62,6 @@
 <body>
 
 <div class="card" id="studentCard">
-    <!-- <img src="" alt="Student Photo" id="studentPhoto"> -->
     <h3 id="studentName"></h3>
     <p id="studentGrade"></p>
     <p id="studentID"></p>
@@ -84,19 +83,13 @@
         .then(data => {
             const student = data.find(s => s.StudentID === studentID);
             if (student) {
-                // Construct the Google Drive image URL
-                // const studentPhotoUrl = `https://drive.google.com/file/d/1STzabww2YCc6M30l09EDrvcOT-XzNXTI/view&id=${studentID}.jpg`;
-                
-                
-                // document.getElementById('studentPhoto').src = studentPhotoUrl;
-                
                 document.getElementById('studentName').innerText = student.StudentName;
                 document.getElementById('studentGrade').innerText = `ថ្នាក់ទី: ${student.Grade}`;
                 document.getElementById('studentID').innerText = `អត្តលេខ: ${student.StudentID}`;
                 document.getElementById('studentDOB').innerText = `ថ្ងៃខែឆ្នាំកំណើត: ${student.DoB}`;
                 document.getElementById('studentGender').innerText = `ភេទ: ${student.Gender}`;
                 document.getElementById('studentAddress').innerText = `អាសយដ្ឋានបច្ចុប្បន្ន: ${student.Address}`;
-                document.getElementById('qrCode').src = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${student.StudentID}`;
+                document.getElementById('qrCode').src = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.website.com/site?id=${student.StudentID}`;
             } else {
                 document.getElementById('studentCard').innerHTML = '<p>ទិន្នន័យសិស្សរកមិនឃើញទេ!</p>';
             }

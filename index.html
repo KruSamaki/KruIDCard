@@ -89,7 +89,7 @@
                 document.getElementById('studentDOB').innerText = `ថ្ងៃខែឆ្នាំកំណើត: ${student.DoB}`;
                 document.getElementById('studentGender').innerText = `ភេទ: ${student.Gender}`;
                 document.getElementById('studentAddress').innerText = `អាសយដ្ឋានបច្ចុប្បន្ន: ${student.Address}`;
-                document.getElementById('qrCode').src = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.website.com/site?id=${student.StudentID}`;
+                document.getElementById('qrCode').src = `https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${window.location.href}`;
             } else {
                 document.getElementById('studentCard').innerHTML = '<p>ទិន្នន័យសិស្សរកមិនឃើញទេ!</p>';
             }
